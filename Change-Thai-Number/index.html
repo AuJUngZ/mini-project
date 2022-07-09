@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thai Number</title>
+    <script>
+      const thaiNumber = ["๐", "๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘", "๙"];
+      function convertNumberToThai() {
+        let originalText = document.getElementById("original").value;
+        let i = 0;
+        thaiNumber.map((element) => {
+          originalText = originalText.replaceAll(i, element);
+          i++;
+        });
+        document.getElementById("Converted").value = originalText;
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1>Convert to Thai number</h1>
+      <textarea
+        id="original"
+        oninput="convertNumberToThai()"
+        cols="50"
+        rows="10"
+      ></textarea>
+      <textarea name="" id="Converted" cols="50" rows="10"></textarea>
+    </center>
+  </body>
+</html>
